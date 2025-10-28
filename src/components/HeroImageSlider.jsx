@@ -20,7 +20,7 @@ const slides = [
         //tagline: "Onshore Support Services",
         headline: "Ground Support for Uninterrupted <span class='text-hillcrop-green'>Success</span>.",
         subtext: "From warehousing and maintenance to facility management, we back up your remote field operations.",
-        image: "/images/onshore-support.jpg", // Updated to match image path style
+        image: "/images/oil&gas.jpg", // Updated to match image path style
         key: 2
     },
 ];
