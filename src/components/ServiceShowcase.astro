@@ -1,0 +1,91 @@
+---
+// Define the data for our three main service areas
+const features = [
+    {
+        title: "Marine Logistics and Support",
+        description: "Providing critical vessel chartering, offshore crew transfers, and specialized equipment transport for seamless deep-water operations. Our capabilities ensure prompt, safe, and reliable movement of personnel and assets.",
+        // **Updated to use local image path**
+        imageUrl: "/images/marine-logistics.png",
+        url: "/services/marine-logistics"
+    },
+    {
+        title: "Procurement and Supply Chain",
+        description: "Sourcing high-quality, certified equipment and managing the end-to-end supply chain to ensure materials reach site efficiently and reliably, minimizing downtime and cost overruns.",
+        // **Updated to use local image path**
+        imageUrl: "/images/procurement.png",
+        url: "/services/sourcing-procurement"
+    },
+    {
+        title: "Onshore Support Services",
+        description: "Essential ground support, including secure warehousing, technical maintenance, and comprehensive facility management, to back up your remote offshore operations and headquarters.",
+        // **Updated to use local image path**
+        imageUrl: "/images/onshore-support.png",
+        url: "/services/onshore-support"
+    },
+];
+---
+
+<section class="py-20 lg:py-32 bg-hillcrop-cream">
+    <div class="container mx-auto px-6">
+        
+        <div class="text-center mb-16">
+            <h2 class="font-heading text-4xl md:text-5xl font-bold text-charcoal mb-4">
+                Our Core <span class="text-hillcrop-green">Service</span> Focus
+            </h2>
+            <p class="font-body text-xl text-gray-700 max-w-4xl mx-auto">
+                Hillcrop Energy Services Limited delivers comprehensive and scalable solutions across the critical facets of the energy sector supply chain.
+            </p>
+        </div>
+
+        {features.map((feature, index) => (
+            <div 
+                class={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center ${index > 0 ? 'mt-20 md:mt-32' : ''}`}
+            >
+                
+                {/* 1. Image Column: Always order-1 on mobile. Switches to md:order-2 for odd items on desktop. */}
+                <div 
+                    class={`order-1 rounded-xl overflow-hidden shadow-2xl transition duration-500 hover:shadow-charcoal/30 
+                    ${index % 2 !== 0 ? 'md:order-2' : ''}`}
+                >
+                    <img 
+                        src={feature.imageUrl} 
+                        alt={feature.title} 
+                        class="w-full aspect-[4/3] object-cover transition duration-500 hover:scale-[1.02]"
+                        onerror="this.onerror=null;this.src='/images/placeholder-service.jpg';"
+                    />
+                </div>
+                
+                {/* 2. Content Column: Always order-2 on mobile. Switches to md:order-1 for odd items on desktop. */}
+                <div 
+                    class={`order-2 py-4 ${index % 2 !== 0 ? 'md:order-1' : ''}`}
+                >
+                    <h3 class="font-heading text-3xl md:text-4xl font-bold text-charcoal mb-6">
+                        {feature.title}
+                    </h3>
+                    <p class="font-body text-gray-700 text-lg mb-8">
+                        {feature.description}
+                    </p>
+                    
+                    {/* Learn More Button */}
+                    <a 
+                        href={feature.url} 
+                        class="inline-flex items-center px-8 py-3 bg-hillcrop-green text-white font-semibold rounded-full shadow-lg hover:bg-hillcrop-green-dark transition duration-300 text-lg"
+                    >
+                        Learn More
+                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+        ))}
+        
+        {/* CTA to all services */}
+        <div class="text-center mt-20">
+            <a 
+                href="/services" 
+                class="font-heading px-10 py-4 bg-charcoal text-white font-bold text-xl rounded-full shadow-xl transform transition duration-300 hover:bg-gray-800 hover:scale-105 inline-block"
+            >
+                View All Comprehensive Services
+            </a>
+        </div>
+    </div>
+</section>

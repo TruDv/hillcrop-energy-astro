@@ -1,0 +1,36 @@
+---
+// src/pages/services/onshore-offshore.astro - FULL CODE (Updated Professional Content)
+import MainLayout from '../../layouts/MainLayout.astro';
+import DetailSection from '../../components/DetailSection.astro';
+
+const serviceData = {
+    title: "Onshore & Offshore Operations",
+    description: "Hillcrop Energy delivers complete, safe, and efficient operational support across the entire upstream and downstream oil and gas value chain.",
+    
+    imageUrl: "/images/oil_rig_operations.jpg", 
+    imageAlt: "A large oil rig operating in the deep sea with a supply vessel nearby.",
+    
+    // 1. MAIN CONTENT BLOCK (Appears next to the image)
+    content: `
+        <p>In the highly demanding energy sector, efficiency and safety are paramount. Hillcrop Energy provides comprehensive services to support all phases of onshore and offshore operations, from remote desert drilling sites to deepwater platforms.</p>
+        <p>Our experienced team utilizes advanced monitoring and maintenance techniques to ensure asset integrity, reduce downtime, and optimize production volumes, maintaining strict adherence to international HSE (Health, Safety, and Environment) standards.</p>
+        <p>We focus on delivering sustainable operational reliability, allowing our clients to concentrate on core business growth while we handle the complexities of field maintenance and regulatory compliance.</p>
+    `,
+
+    // 2. KEY CAPABILITIES BLOCK (Appears in the styled blue section)
+    keyCapabilities: [
+        "Rig & Platform Maintenance and Upgrades",
+        "Routine and Specialized Well Intervention & Workover",
+        "Subsea Asset Inspection and Repair",
+        "Integrated Logistics and Supply Chain Management",
+        "Emergency Response Planning and Execution",
+        "Process Optimization and Production Enhancement",
+        "Regulatory Compliance and Safety Audits",
+        "Advanced Monitoring and Diagnostics",
+    ],
+};
+---
+
+<MainLayout title={serviceData.title} description={serviceData.description}>
+    <DetailSection data={serviceData} />
+</MainLayout>

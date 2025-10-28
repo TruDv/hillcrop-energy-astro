@@ -1,0 +1,31 @@
+---
+// src/pages/services/international-procurement.astro
+import MainLayout from '../../layouts/MainLayout.astro';
+import DetailSection from '../../components/DetailSection.astro';
+
+const serviceData = {
+    title: "International Procurement",
+    description: "Global sourcing, consolidation, and delivery of materials and equipment, simplifying complex supply chains for international clients.",
+    
+    imageUrl: "/images/international-procurement.png", 
+    imageAlt: "A cargo ship being loaded at a major international port.",
+    
+    content: `
+        <p>Our international procurement division leverages a global network of suppliers and logistics partners to acquire materials efficiently, regardless of the origin. We handle all aspects of cross-border purchasing, including customs, trade compliance, and currency exchange.</p>
+        <p>This service is designed to reduce project risk and overhead for our clients, guaranteeing that specialized components arrive on time and fully compliant with local and international regulations.</p>
+    `,
+
+    keyCapabilities: [
+        "Multi-National Sourcing and Vetting",
+        "Export/Import Documentation and Compliance",
+        "Global Freight Forwarding and Consolidation",
+        "Quality Inspection at Origin",
+        "Expedited Air and Sea Freight Solutions",
+        "Warehouse and Inventory Management",
+    ],
+};
+---
+
+<MainLayout title={serviceData.title} description={serviceData.description}>
+    <DetailSection data={serviceData} />
+</MainLayout>

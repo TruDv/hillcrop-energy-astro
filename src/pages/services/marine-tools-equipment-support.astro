@@ -1,0 +1,31 @@
+---
+// src/pages/services/marine-tools-equipment-support.astro
+import MainLayout from '../../layouts/MainLayout.astro';
+import DetailSection from '../../components/DetailSection.astro';
+
+const serviceData = {
+    title: "Marine Tools/Equipment Support",
+    description: "Leasing, operation, and maintenance of heavy machinery and specialized tools for dredging, construction, and subsea projects.",
+    
+    imageUrl: "/images/service-marine-tools.png", 
+    imageAlt: "Specialized yellow marine construction equipment on a barge.",
+    
+    content: `
+        <p>We provide immediate access to a rigorously maintained fleet of specialized marine tools and heavy equipment. Our support extends beyond leasing, including certified operators and on-site technical maintenance to minimize delays.</p>
+        <p>This service is critical for construction, inspection, and maintenance activities in harsh offshore and coastal environments where equipment reliability is paramount.</p>
+    `,
+
+    keyCapabilities: [
+        "Heavy Marine Crane and Barge Leasing",
+        "Dredging and Survey Equipment Supply",
+        "Subsea ROV and Inspection Tool Support",
+        "Certified Equipment Operators and Crew",
+        "On-site Maintenance and Repair Services",
+        "Rigging and Lifting Gear Certification",
+    ],
+};
+---
+
+<MainLayout title={serviceData.title} description={serviceData.description}>
+    <DetailSection data={serviceData} />
+</MainLayout>

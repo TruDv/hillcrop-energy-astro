@@ -1,0 +1,31 @@
+---
+// src/pages/services/general-contracts.astro
+import MainLayout from '../../layouts/MainLayout.astro';
+import DetailSection from '../../components/DetailSection.astro';
+
+const serviceData = {
+    title: "General Contracts",
+    description: "Flexible, managed contract solutions for various project needs, delivering quality services under a simplified contractual framework.",
+    
+    imageUrl: "/images/General-Contracts.jpg", 
+    imageAlt: "A diverse group of professionals collaborating around a large project blueprint.",
+    
+    content: `
+        <p>Our General Contracts service provides clients with a streamlined approach to fulfilling diverse project requirements without engaging multiple vendors. We manage the complexity of sourcing specialized manpower, short-term equipment, and niche technical services.</p>
+        <p>This flexible model ensures that clients can quickly scale their resources up or down, relying on Hillcrop Energy to maintain quality control and project oversight across all contracted tasks.</p>
+    `,
+
+    keyCapabilities: [
+        "Specialized Manpower Supply (Temporary/Long-Term)",
+        "Consulting and Technical Advisory Services",
+        "Project Management Outsourcing",
+        "Ad Hoc Equipment and Vehicle Rentals",
+        "Administrative and Operational Support",
+        "Subcontractor Management and Vetting",
+    ],
+};
+---
+
+<MainLayout title={serviceData.title} description={serviceData.description}>
+    <DetailSection data={serviceData} />
+</MainLayout>

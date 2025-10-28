@@ -1,0 +1,77 @@
+---
+// Define the data for our three main service areas (Marine Logistics, Procurement, Onshore Support)
+const features = [
+    {
+        title: "Marine Logistics and Support",
+        description: "Providing critical vessel chartering, offshore crew transfers, and specialized equipment transport for seamless deep-water operations.",
+        // Change this path to your actual image file path in /public/images/
+        imageUrl: "/images/marine-logistics.png", 
+        url: "/services/marine-logistics"
+    },
+    {
+        title: "Procurement and Supply Chain",
+        description: "Sourcing high-quality, certified equipment and managing the end-to-end supply chain to ensure materials reach site efficiently and reliably.",
+        // Change this path to your actual image file path in /public/images/
+        imageUrl: "/images/procurement.png", 
+        url: "/services/sourcing-procurement"
+    },
+    {
+        title: "Onshore Support Services",
+        description: "Essential ground support, including warehousing, technical maintenance, and facility management, to back up your remote operations.",
+        // Change this path to your actual image file path in /public/images/
+        imageUrl: "/images/onshore-support.png", 
+        url: "/services/onshore-support"
+    },
+];
+---
+
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+        
+        <h2 class="font-heading text-4xl font-extrabold text-center text-gray-900 mb-4">
+            Our Core <span class="text-hillcrop-green">Service</span> Areas
+        </h2>
+        <p class="font-body text-xl text-center text-gray-600 max-w-3xl mx-auto mb-12">
+            Hillcrop Energy delivers comprehensive marine logistics, procurement, and onshore support, ensuring operational success for the energy sector.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {features.map((feature) => (
+                <a href={feature.url} class="block">
+                    <div class="bg-white rounded-xl shadow-2xl hover:shadow-gray-300/50 transition duration-500 transform hover:-translate-y-1 h-full overflow-hidden">
+                        
+                        {/* Image Placeholder */}
+                        <img 
+                            src={feature.imageUrl} 
+                            alt={feature.title} 
+                            class="w-full h-48 object-cover object-center" 
+                            onerror="this.onerror=null;this.src='/images/placeholder-service.jpg';" // Now pointing to a local fallback image
+                        />
+                        
+                        {/* Card Content */}
+                        <div class="p-8">
+                            <h3 class="font-heading text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                            <p class="font-body text-gray-600 mb-6">{feature.description}</p>
+                            
+                            <div class="text-hillcrop-green font-semibold hover:text-hillcrop-green-dark transition flex items-center">
+                                Read More
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            ))}
+        </div>
+
+        {/* See All Services Button */}
+        <div class="text-center mt-16">
+            <a 
+                href="/services" 
+                class="font-heading px-10 py-4 bg-hillcrop-green text-white font-bold text-xl rounded-lg shadow-xl transform transition duration-300 hover:bg-hillcrop-green-dark hover:scale-105 inline-block"
+            >
+                See All Services
+            </a>
+        </div>
+
+    </div>
+</section>

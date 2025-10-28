@@ -1,0 +1,136 @@
+---
+// src/components/Header.astro - FINAL NAVIGATION COMPONENT
+
+const mainNavLinks = [
+    { title: 'Home', url: '/' },
+    { title: 'About Us', url: '/about' },
+    { title: 'Contact', url: '/contact' },
+    { title: 'Careers', url: '/career' },
+];
+
+const serviceLinks = [
+    { title: "Marine Logistics", slug: "marine-logistics" },
+    { title: "Technical Tools Procurement", slug: "technical-tools-procurement" },
+    { title: "Safety Materials Supply", slug: "safety-materials-supply" },
+    { title: "International Procurement", slug: "international-procurement" },
+    { title: "Onshore / Support", slug: "onshore-support" },
+    { title: "Marine Tools/Equipment Support", slug: "marine-tools-equipment-support" },
+    { title: "General Contracts", slug: "general-contracts" },
+];
+---
+
+<header id="site-header" class="bg-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+        {/* --- UPDATED: Replaced text branding with a logo image tag --- */}
+        <a href="/" class="flex items-center">
+            <img 
+                src="/images/logo.png" 
+                alt="HillCrop Energy Logo" 
+                class="h-10 w-auto" 
+                onerror="this.onerror=null;this.src='/images/placeholder-logo.png';"
+            />
+        </a>
+        {/* ---------------------------------------------------------------------- */}
+
+        <nav id="desktop-nav" class="hidden lg:flex space-x-6 items-center">
+            
+            {mainNavLinks.map((link) => (
+                <a 
+                    href={link.url} 
+                    class="text-lg font-medium text-gray-700 hover:text-hillcrop-green transition duration-300 px-2 py-1"
+                >
+                    {link.title}
+                </a>
+            ))}
+
+            <div class="relative group">
+                <a href="/services" class="text-lg font-medium text-gray-700 hover:text-hillcrop-green transition duration-300 px-2 py-1 flex items-center">
+                    Services
+                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                
+                <div class="absolute hidden group-hover:block w-72 mt-0 bg-white shadow-xl rounded-lg overflow-hidden border border-gray-100 py-2">
+                    {serviceLinks.map((service) => (
+                        <a 
+                            href={`/services/${service.slug}`} 
+                            class="block px-4 py-3 text-sm font-medium text-gray-800 hover:bg-hillcrop-cream hover:text-hillcrop-green transition duration-200"
+                        >
+                            {service.title}
+                        </a>
+                    ))}
+                </div>
+            </div>
+
+            <a 
+                href="/contact" 
+                class="ml-2 px-6 py-2 bg-hillcrop-green text-white font-semibold rounded-full shadow-md hover:bg-hillcrop-green-dark transition duration-300 ease-in-out text-base"
+            >
+                Get a Quote
+            </a>
+        </nav>
+
+        <button id="mobile-menu-toggle" class="lg:hidden text-gray-600 hover:text-hillcrop-green focus:outline-none">
+            <svg id="menu-icon-open" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <svg id="menu-icon-close" class="w-8 h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+    </div>
+
+    <div id="mobile-menu-dropdown" class="hidden lg:hidden">
+        <nav class="px-4 pt-2 pb-4 space-y-2 bg-gray-50 border-t border-gray-200">
+            
+            {mainNavLinks.map((link) => (
+                <a 
+                    href={link.url} 
+                    class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-hillcrop-cream hover:text-hillcrop-green rounded-lg transition duration-300"
+                >
+                    {link.title}
+                </a>
+            ))}
+
+            <details class="group">
+                <summary class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-hillcrop-cream hover:text-hillcrop-green rounded-lg transition duration-300 cursor-pointer list-none">
+                    <span class="flex justify-between items-center">
+                        Services
+                        <svg class="w-4 h-4 transform group-open:rotate-180 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                </summary>
+                <div class="mt-2 space-y-1 pl-4 border-l border-gray-200">
+                    {serviceLinks.map((service) => (
+                        <a 
+                            href={`/services/${service.slug}`} 
+                            class="block px-3 py-2 text-sm text-gray-600 hover:bg-gray-100 hover:text-hillcrop-green rounded-lg transition duration-300"
+                        >
+                            {service.title}
+                        </a>
+                    ))}
+                </div>
+            </details>
+
+            <a 
+                href="/contact" 
+                class="mt-2 block px-3 py-2 text-base font-medium text-white bg-hillcrop-green hover:bg-hillcrop-green-dark rounded-lg text-center transition duration-300"
+            >
+                Get a Quote
+            </a>
+        </nav>
+    </div>
+</header>
+
+<script>
+    const toggleButton = document.getElementById('mobile-menu-toggle');
+    const menuDropdown = document.getElementById('mobile-menu-dropdown');
+    const iconOpen = document.getElementById('menu-icon-open');
+    const iconClose = document.getElementById('menu-icon-close');
+
+    toggleButton.addEventListener('click', () => {
+        const isHidden = menuDropdown.classList.toggle('hidden');
+        if (isHidden) {
+            iconOpen.classList.remove('hidden');
+            iconClose.classList.add('hidden');
+        } else {
+            iconOpen.classList.add('hidden');
+            iconClose.classList.remove('hidden');
+        }
+    });
+</script>

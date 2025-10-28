@@ -1,0 +1,21 @@
+---
+// src/pages/contact.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import ContactUsBody from '../components/ContactUsBody.astro';
+
+const pageTitle = "Contact Us";
+const pageDescription = "Contact our team for specialized energy services, general inquiries, or immediate operational support.";
+---
+
+<MainLayout title={pageTitle} description={pageDescription}>
+    
+    <section class="bg-charcoal py-24 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-extrabold mb-3">{pageTitle}</h1>
+            <p class="text-xl text-gray-300 max-w-4xl mx-auto">{pageDescription}</p>
+        </div>
+    </section>
+
+    <ContactUsBody />
+
+</MainLayout>

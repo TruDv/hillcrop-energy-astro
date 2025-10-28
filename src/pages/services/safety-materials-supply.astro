@@ -1,0 +1,31 @@
+---
+// src/pages/services/safety-materials-supply.astro
+import MainLayout from '../../layouts/MainLayout.astro';
+import DetailSection from '../../components/DetailSection.astro';
+
+const serviceData = {
+    title: "Safety Materials Supply",
+    description: "Providing a complete range of certified safety materials and PPE to ensure the highest standards of worker and site safety.",
+    
+    imageUrl: "/images/service-safety.png", 
+    imageAlt: "A technician wearing full safety gear and helmet in an industrial setting.",
+    
+    content: `
+        <p>Safety is our top priority. We supply only industry-leading, certified Personal Protective Equipment (PPE) and site safety materials designed for the demanding environments of oil, gas, and marine operations.</p>
+        <p>Our inventory includes specialized items such as fire-resistant clothing, gas detection systems, respiratory gear, and advanced fall protection systems.</p>
+    `,
+
+    keyCapabilities: [
+        "Certified Personal Protective Equipment (PPE)",
+        "Fire Safety and Suppression Systems",
+        "Hazardous Gas and Leak Detection Equipment",
+        "Industrial First Aid and Emergency Kits",
+        "Specialized Safety Footwear and Headwear",
+        "On-Site Safety Training Materials",
+    ],
+};
+---
+
+<MainLayout title={serviceData.title} description={serviceData.description}>
+    <DetailSection data={serviceData} />
+</MainLayout>

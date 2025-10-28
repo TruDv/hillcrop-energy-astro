@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* * Global Styles: Ensure Inter font is used and 
+ * charcoal is the default text color 
+ */
+body {
+    /* Assuming 'Inter' is imported/available in your setup */
+    font-family: 'Inter', sans-serif; 
+    color: #333333; /* Use charcoal for default text */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

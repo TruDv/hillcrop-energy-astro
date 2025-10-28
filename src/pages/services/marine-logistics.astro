@@ -1,0 +1,39 @@
+---
+// src/pages/services/marine-logistics.astro
+import MainLayout from '../../layouts/MainLayout.astro';
+import DetailSection from '../../components/DetailSection.astro';
+
+const serviceData = {
+    title: "Marine Logistics",
+    description: "Providing seamless and efficient maritime transportation and logistics to support offshore and coastal operations.",
+    
+    imageUrl: "/images/marine-logistics.png", 
+    imageAlt: "An offshore supply vessel anchored near a marine platform.",
+    
+    content: `
+        <p>Efficient marine logistics is the backbone of successful offshore energy projects. We manage the complex coordination of vessels, crew transfers, and material supply to remote and challenging locations.</p>
+        <p>Our fleet and support services are maintained to the highest safety and regulatory standards, ensuring uninterrupted project timelines and operational continuity.</p>
+    `,
+
+    keyCapabilities: [
+        "Vessel Chartering and Fleet Management",
+        "Offshore Supply and Material Coordination",
+        "Crew and Personnel Transfer Services",
+        "Customs Clearance and Documentation",
+        "Integrated Shore Base Support",
+        "Emergency Towing and Salvage",
+    ],
+    keyCapabilities: [
+        "Vessel Chartering and Fleet Management",
+        "Offshore Supply and Material Coordination",
+        "Crew and Personnel Transfer Services",
+        "Customs Clearance and Documentation",
+        "Integrated Shore Base Support",
+        "Emergency Towing and Salvage",
+    ],
+};
+---
+
+<MainLayout title={serviceData.title} description={serviceData.description}>
+    <DetailSection data={serviceData} />
+</MainLayout>

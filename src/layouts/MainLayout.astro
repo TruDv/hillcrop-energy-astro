@@ -1,0 +1,42 @@
+---
+// src/layouts/MainLayout.astro
+import '../styles/global.css'; // Import the global styles (Tailwind)
+import NavBar from '../components/NavBar.jsx'; // For all pages
+import Footer from '../components/Footer.astro'; // We'll create this component next
+
+export interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title} | Hillcrop Energy</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Load Google Fonts for consistency: Inter (Body) and Poppins (Heading) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<!-- Applying font-body class to set Inter as the default text font everywhere -->
+<body class="min-h-screen bg-white text-gray-800 antialiased font-body">
+    <div class="flex flex-col min-h-screen">
+        
+        <NavBar client:load /> 
+
+        <main class="flex-grow">
+            <slot />
+        </main>
+
+        <Footer />
+    </div>
+</body>
+</html>

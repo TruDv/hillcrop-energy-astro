@@ -1,0 +1,31 @@
+---
+// src/pages/services/technical-tools-procurement.astro
+import MainLayout from '../../layouts/MainLayout.astro';
+import DetailSection from '../../components/DetailSection.astro';
+
+const serviceData = {
+    title: "Technical Tools Procurement",
+    description: "Sourcing and delivering high-specification, certified technical tools and equipment for critical energy applications.",
+    
+    imageUrl: "/images/service-tools.jpg", 
+    imageAlt: "A warehouse shelf stacked with specialized drilling and maintenance tools.",
+    
+    content: `
+        <p>Access to the right technical tools at the right time is non-negotiable in the energy sector. We specialize in the global procurement of high-performance tools, covering everything from downhole equipment to diagnostic devices.</p>
+        <p>Our procurement process includes rigorous quality assurance checks and certification verification to guarantee equipment reliability and compliance with industry standards.</p>
+    `,
+
+    keyCapabilities: [
+        "Drilling and Completion Tool Sourcing",
+        "Advanced Diagnostic Equipment Supply",
+        "Global Supplier Network Management",
+        "Quality Assurance and Certification",
+        "Equipment Auditing and Inspection",
+        "Expedited Logistics and Delivery",
+    ],
+};
+---
+
+<MainLayout title={serviceData.title} description={serviceData.description}>
+    <DetailSection data={serviceData} />
+</MainLayout>

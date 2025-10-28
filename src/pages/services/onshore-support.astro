@@ -1,0 +1,31 @@
+---
+// src/pages/services/onshore-support.astro
+import MainLayout from '../../layouts/MainLayout.astro';
+import DetailSection from '../../components/DetailSection.astro';
+
+const serviceData = {
+    title: "Onshore / Support",
+    description: "Providing comprehensive operational, maintenance, and facility support for all land-based oil and gas assets.",
+    
+    imageUrl: "/images/service-onshore.png", 
+    imageAlt: "An oil wellhead and pumping station on a flat, dry piece of land.",
+    
+    content: `
+        <p>Hillcrop Energy offers end-to-end support for onshore assets, ensuring optimal performance and compliance. Our services cover everything from routine preventative maintenance to critical operational assistance.</p>
+        <p>We supply skilled technical manpower, manage site logistics, and implement best practices to reduce operational costs and maximize asset uptime in remote and complex terrestrial environments.</p>
+    `,
+
+    keyCapabilities: [
+        "Field Maintenance and Integrity Services",
+        "Facility Turnarounds and Shutdown Support",
+        "Specialized Technical Manpower Supply",
+        "Civil Works and Infrastructure Upgrades",
+        "Camp and Life Support Services",
+        "Regulatory Compliance and Reporting",
+    ],
+};
+---
+
+<MainLayout title={serviceData.title} description={serviceData.description}>
+    <DetailSection data={serviceData} />
+</MainLayout>

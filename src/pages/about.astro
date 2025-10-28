@@ -1,0 +1,49 @@
+---
+// src/pages/about.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import AboutUsBody from '../components/AboutUsBody.astro'; // Renamed component
+
+const pageTitle = "About Hillcrop";
+const pageDescription = "Learn about our history, our commitment to excellence, and the core values that drive our operations in the energy sector.";
+
+const aboutData = {
+    // Content derived from about.html
+    mainContent: `
+        <p><strong>HillCrop Energy Services Limited</strong> is a dynamic and forward-thinking company registered under the laws of the Federal Republic of Nigeria (RC: 1273701). Established to deliver cutting-edge, comprehensive services and solutions to the energy, marine, oil, and gas industries, we operate across Nigeria and the West African sub-region.</p>
+        <br>
+        <p>Our foundation is built on a deep understanding of the sector’s rigorous demands for safety, efficiency, and reliability. With a powerful and experienced workforce, we meet any specific requirements—including manufacturing and service needs—under diverse working conditions.</p>
+        <br>
+        <p>We are committed to providing the best up-to-date, efficient, and cost-effective solutions, precisely tailored to our clients’ exact needs. From complex onshore field support to specialized international procurement and marine logistics, we strive to be the partner of choice for energy companies operating in Nigeria and across the West African sub-region.</p>
+       
+    `,
+
+    // Content derived from Mission.html
+    mission: "To provide the best services possible, with the highest regards to quality, safety, and the environment.",
+
+    // Content derived from Mission.html
+    vision: "To be a leading provider of specialized technical services, recognized globally for excellence in delivery, safety record, and innovation in the energy industry.",
+    
+    // Core values derived from industry best practices
+    coreValues: [
+        "Safety and Integrity First",
+        "Operational Excellence",
+        "Environmental Stewardship",
+        "Innovation and Technology",
+        "Client Partnership and Trust",
+        "Professionalism and Accountability"
+    ]
+};
+---
+
+<MainLayout title={pageTitle} description={pageDescription}>
+    
+    <section class="bg-charcoal py-24 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-extrabold mb-3">{pageTitle}</h1>
+            <p class="text-xl text-gray-300 max-w-4xl mx-auto">{pageDescription}</p>
+        </div>
+    </section>
+
+    <AboutUsBody data={aboutData} />
+
+</MainLayout>

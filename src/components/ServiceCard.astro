@@ -1,0 +1,36 @@
+---
+// src/components/ServiceCard.astro
+const { service } = Astro.props;
+---
+<a href={service.url} class="block h-full transition-all duration-300 transform hover:scale-[1.03] hover:shadow-2xl rounded-xl overflow-hidden group">
+    <div class="bg-white rounded-xl shadow-lg flex flex-col h-full">
+        <!-- Image Section: Placed before content -->
+        <div class="h-48 overflow-hidden">
+            <img 
+                src={service.image} 
+                alt={`Image for ${service.title}`} 
+                class="w-full h-full object-cover transition duration-500 group-hover:opacity-80"
+                loading="lazy"
+            />
+        </div>
+
+        <!-- Content Section -->
+        <div class="p-8 flex flex-col flex-grow">
+            
+            <!-- Title: Now aligned left, removing icon spacing -->
+            <h3 class="text-2xl font-bold text-gray-900 leading-snug mb-4">
+                {service.title}
+            </h3>
+            
+            <p class="text-gray-600 flex-grow mb-6">
+                {service.description}
+            </p>
+
+            <!-- Call to Action Link -->
+            <span class="mt-auto text-hillcrop-green font-semibold group-hover:text-hillcrop-green-dark transition-colors duration-300 flex items-center">
+                Learn More
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1" viewBox="0 0 24 24"><path fill="currentColor" d="M16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z"/></svg>
+            </span>
+        </div>
+    </div>
+</a>

@@ -1,0 +1,21 @@
+---
+// src/pages/career.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import CareerBody from '../components/CareerBody.astro';
+
+const pageTitle = "Careers";
+const pageDescription = "Explore career opportunities and join a team dedicated to excellence in marine and onshore energy services.";
+---
+
+<MainLayout title={pageTitle} description={pageDescription}>
+    
+    <section class="bg-charcoal py-24 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl font-extrabold mb-3">{pageTitle}</h1>
+            <p class="text-xl text-gray-300 max-w-4xl mx-auto">{pageDescription}</p>
+        </div>
+    </section>
+
+    <CareerBody />
+
+</MainLayout>
