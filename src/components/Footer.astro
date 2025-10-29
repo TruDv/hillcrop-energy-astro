@@ -1,6 +1,8 @@
 ---
 // src/components/Footer.astro - Global Footer Component
 
+const whatsappNumberClean = "2348030874890"; // Cleaned number for wa.me link
+
 const contactDetails = {
     // Consolidated all phone numbers into an array
     phones: [
@@ -11,6 +13,8 @@ const contactDetails = {
     // Consolidated all email addresses into an array
     emails: [
         "info@hillcropenergy.com",
+        "enquiries@hillcropenergy.com",
+        "hillcropenergyservices@gmail.com",
     ],
     // Consolidated all addresses into a list of objects
     addresses: [
@@ -41,6 +45,8 @@ const services = [
     { title: "Marine Tools/Equipment Support", slug: "marine-tools-equipment-support" },
     { title: "General Contracts", slug: "general-contracts" },
 ];
+
+const whatsappUrl = `https://wa.me/${whatsappNumberClean}?text=${encodeURIComponent("Hello HillCrop Energy, I would like to make an inquiry.")}`;
 ---
 
 <footer class="bg-gray-900 text-gray-300">
@@ -152,3 +158,21 @@ const services = [
         </div>
     </div>
 </footer>
+
+<!-- FLOATING WHATSAPP BUTTON (with text) -->
+<a 
+    href={whatsappUrl} 
+    target="_blank" 
+    class="fixed bottom-6 right-6 z-50 bg-hillcrop-green text-white p-3 rounded-full shadow-2xl hover:bg-hillcrop-green-dark transition duration-300 transform hover:scale-105 flex items-center justify-center 
+           md:justify-start md:p-3 md:pr-5 md:w-auto"
+    aria-label="Chat Live on WhatsApp"
+>
+    <!-- Text: Hidden on mobile (default), visible on medium screens and up (md:inline) -->
+    <span class="hidden md:inline text-base font-semibold mr-2 tracking-wide">
+        Chat Live
+    </span>
+    <!-- WhatsApp Icon SVG: Always visible -->
+    <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12.039 2C6.54 2 2.093 6.477 2.093 12C2.093 14.01 2.593 15.891 3.483 17.54L2.148 22.083L6.878 20.69C8.428 21.498 10.16 22 12.039 22C17.538 22 22 17.523 22 12C22 6.477 17.538 2 12.039 2ZM17.476 16.516C17.276 16.891 16.147 17.447 15.656 17.579C15.166 17.711 14.79 17.777 14.414 17.711C14.038 17.644 13.568 17.509 12.51 17.159C11.198 16.702 10.136 15.74 9.308 14.542C8.653 13.626 8.356 12.639 8.289 12.181C8.223 11.724 8.78 11.478 9.13 11.129C9.318 10.941 9.554 10.669 9.771 10.433C9.988 10.197 10.054 10.051 10.16 9.834C10.266 9.617 10.322 9.401 10.433 9.175C10.544 8.949 10.398 8.703 10.198 8.486C9.998 8.269 9.771 7.749 9.583 7.348C9.395 6.946 9.188 6.999 9.035 6.999C8.882 6.999 8.656 6.999 8.449 6.999C8.243 6.999 7.971 7.076 7.708 7.378C7.446 7.68 6.84 8.246 6.84 9.42C6.84 10.594 7.669 11.737 7.781 11.973C7.892 12.209 9.471 14.654 11.724 15.669C12.25 15.914 12.684 16.037 13.06 16.155C13.639 16.331 14.155 16.294 14.569 15.986C14.983 15.677 15.228 15.012 15.429 14.686C15.63 14.36 15.799 14.225 15.934 14.062C16.069 13.899 16.175 13.805 16.376 14.051C16.577 14.297 17.26 15.29 17.476 15.724C17.693 16.159 17.693 16.294 17.476 16.516Z"/>
+    </svg>
+</a>
