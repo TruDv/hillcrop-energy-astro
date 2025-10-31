@@ -1,87 +1,61 @@
----
-import MainLayout from '../layouts/MainLayout.astro';
-import HeroImageSlider from '../components/HeroImageSlider.jsx'; // Now using the Image Slider
-import ServiceShowcase from '../components/ServiceShowcase.astro';
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Temporarily Unavailable - HillCrop Energy Services Limited</title>
+    <!-- Load Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Updated to match the color defined in tailwind.config.cjs (#00A651)
+                        'hillcrop-green': '#00A651', 
+                        'hillcrop-gold': '#FFC72C',  // Gold/Yellow accent
+                        'gray-dark': '#1A1A1A',      // Very dark background
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Using Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-dark text-white min-h-screen flex items-center justify-center p-6 font-sans">
 
-<MainLayout
-    title="Home - HillCrop Energy | Marine Logistics & Procurement"
-    description="Premier providers of marine logistics, procurement, and onshore support services to the oil and gas industry."
->
-    
-    {/* Hero Section */}
-    <HeroImageSlider client:load /> 
+    <!-- Centered Content Container -->
+    <div class="max-w-xl w-full p-8 md:p-12 bg-gray-900 rounded-xl shadow-2xl text-center border-t-4 border-hillcrop-green">
+        
+        <!-- Logo/Header Placeholder (optional) -->
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight text-hillcrop-gold">
+            HillCrop Energy
+        </h1>
 
-    {/* Service Showcase Section (New two-column staggered layout) */}
-    <ServiceShowcase />
+        <!-- Primary Message -->
+        <h2 class="text-xl md:text-3xl font-semibold mb-6 text-gray-200">
+            Site Temporarily Unavailable
+        </h2>
 
-    {/* About Us Spotlight - New Section */}
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
-            {/* Content Column */}
-            <div>
-                {/* Removed "Who We Are" tag, title now uses font-bold */}
-                <h2 class="font-heading text-4xl md:text-5xl font-bold text-charcoal mb-6">
-                    Decades of <span class="text-hillcrop-green">Operational Excellence</span> in Energy Support
-                </h2>
-                <p class="font-body text-gray-700 text-lg mb-8">
-                    Hillcrop Energy is a trusted partner in the oil and gas sector, providing specialized support services that ensure continuity and efficiency across complex marine and onshore projects. Our foundation is built on deep industry knowledge, rigorous safety standards, and a commitment to delivering tailored solutions that exceed client expectations in every engagement.
-                </p>
-                <a 
-                    href="/about" 
-                    class="inline-flex items-center px-8 py-3 bg-charcoal text-white font-semibold rounded-full shadow-md hover:bg-gray-800 transition duration-300 text-lg"
-                >
-                    Discover Our Story
-                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                </a>
-            </div>
-            
-            {/* Image/Visual Column */}
-            <div class="order-first lg:order-last">
-                <img 
-                    src="/images/about-us-team.png" 
-                    alt="Hillcrop Energy team working on a project site" 
-                    class="w-full h-auto rounded-xl shadow-2xl" 
-                    onerror="this.onerror=null;this.src='/images/placeholder-about.jpg';"
-                />
-            </div>
-        </div>
-    </section>
+        <p class="text-lg mb-8 leading-relaxed text-gray-400">
+            We are currently performing essential maintenance and system upgrades to enhance our services.
+            The site will be loading soon.
+        </p>
 
-    {/* Why Choose HillCrop Energy Section - Highlighting Core Values */}
-    <section class="bg-hillcrop-cream py-20 md:py-28">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="font-heading text-4xl md:text-5xl font-bold text-charcoal mb-4">
-                Why <span class="text-hillcrop-green">Choose</span> HillCrop Energy?
-            </h2>
-            <p class="font-body text-xl text-gray-700 max-w-4xl mx-auto mb-12">
-                We are defined by a relentless commitment to excellence, integrity, and sustainability in every aspect of our operations.
+        <!-- Alternative Contact Information -->
+        <div class="bg-gray-800 p-4 rounded-lg inline-block">
+            <p class="text-sm font-medium text-hillcrop-green mb-1">
+                For urgent inquiries, please contact us:
             </p>
-            
-            {/* Core Value Grid - Modern, simple design */}
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-                
-                {/* Value 1: Safety First */}
-                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-hillcrop-green transition hover:shadow-xl">
-                    <p class="font-heading text-2xl font-bold text-hillcrop-green mb-2">Safety</p>
-                    <p class="font-body text-gray-600">Our zero-harm policy governs every project, protecting our people, partners, and the environment with rigorous standards.</p>
-                </div>
-
-                {/* Value 2: Innovation */}
-                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-hillcrop-green transition hover:shadow-xl">
-                    <p class="font-heading text-2xl font-bold text-hillcrop-green mb-2">Innovation</p>
-                    <p class="font-body text-gray-600">We continuously adopt leading technology and processes to drive efficiency and optimize resource deployment across the energy chain.</p>
-                </div>
-
-                {/* Value 3: Integrity */}
-                <div class="p-6 bg-white rounded-xl shadow-lg border-t-4 border-hillcrop-green transition hover:shadow-xl">
-                    <p class="font-heading text-2xl font-bold text-hillcrop-green mb-2">Integrity</p>
-                    <p class="font-body text-gray-600">Operating with transparency and accountability, we build trust with every client through ethical and honest business practices.</p>
-                </div>
-
-            </div>
+            <p class="text-md font-bold">
+                <a href="mailto:info@hillcropenergy.com" class="hover:underline text-hillcrop-gold transition duration-200">info@hillcropenergy.com</a>
+            </p>
         </div>
-    </section>
+    </div>
 
-</MainLayout>
+</body>
+</html>
